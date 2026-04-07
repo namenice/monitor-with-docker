@@ -131,7 +131,7 @@ Login Grafana > Connections > Data sources > Add Data Source
 ## Step 7 - Add Dashboard to Grafana
 Grafana Dashboard ID
 ```text
-11074
+1860 
 ```
 
 
