@@ -1,5 +1,5 @@
 # monitor-with-docker
-## Prepare Host
+## Step1 - Prepare Host
 Install Docker Engine
 ```sh
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -10,7 +10,7 @@ Verify
 docker version
 docker compose version
 ```
-## Step1 - Prepare Project Directory
+## Step2 - Prepare Project Directory
 Create subdirectories for configurations
 ```sh
 mkdir -p monitoring-stack/prometheus
@@ -24,7 +24,7 @@ monitoring-stack/
 └── prometheus
     └── prometheus.yml
 ```
-## Step2 - Defining the Docker Compose Configuration
+## Step3 - Defining the Docker Compose Configuration
 Create a docker-compose.yml file in the project root:
 ```text
 cd monitoring-stack/
@@ -93,7 +93,7 @@ services:
     restart: unless-stopped
 EOF
 ```
-## Step3 - Configuring Prometheus
+## Step4 - Configuring Prometheus
 Create a prometheus.yml file in the prometheus directory:
 ```text
 cat <<EOF | tee prometheus/prometheus.yml > /dev/null
@@ -108,7 +108,7 @@ scrape_configs:
       - targets: ['node-exporter:9100']
 EOF
 ```
-## Step 4 - Launching the Monitoring Stack
+## Step5 - Launching the Monitoring Stack
 Start your monitoring stack:
 ```text
 docker compose up -d
@@ -117,18 +117,18 @@ Verify all containers are running:
 ```text
 docker ps -a
 ```
-## Step 5 - Access the monitoring interface
+## Step6 - Access the monitoring interface
 ```text
 Prometheus: http://localhost:9090
 Grafana: http://localhost:3000 (login with admin/admin)
 NodeExporter: http://localhost:3000/metrics
 ```
 
-## Step 6 - Add Datasource Prometheus
+## Step7 - Add Datasource Prometheus
 ```text
 Login Grafana > Connections > Data sources > Add Data Source
 ```
-## Step 7 - Add Dashboard to Grafana
+## Step8 - Add Dashboard to Grafana
 Grafana Dashboard ID
 ```text
 1860 
