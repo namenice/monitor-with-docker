@@ -30,7 +30,7 @@ Create a docker-compose.yml file in the project root:
 cd monitoring-stack/
 ```
 ```text
-cat <<EOF | docker-compose.yml
+cat <<EOF | tee docker-compose.yml > /dev/null
 version: '3.8'
 volumes:
   prometheus_data: {}
@@ -96,7 +96,7 @@ EOF
 ## Step3 - Configuring Prometheus
 Create a prometheus.yml file in the prometheus directory:
 ```text
-cat <<EOF | monitoring-stack/prometheus/prometheus.yml
+cat <<EOF | tee prometheus/prometheus.yml > /dev/null
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
