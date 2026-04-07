@@ -126,7 +126,7 @@ NodeExporter: http://localhost:3000/metrics
 
 ## Step 6 - Add Datasource Prometheus
 ```text
-Login Grafana > datasource
+Login Grafana > Connections > Data sources > Add Data Source
 ```
 ## Step 7 - Add Dashboard to Grafana
 Grafana Dashboard ID
