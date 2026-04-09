@@ -19,6 +19,10 @@ touch monitoring-stack/prometheus/prometheus.yml
 ```
 Show Sturcefile
 ```sh
+apt install tree -y
+tree monitoring-stack/
+```
+```sh
 monitoring-stack/
 ├── docker-compose.yml
 └── prometheus
